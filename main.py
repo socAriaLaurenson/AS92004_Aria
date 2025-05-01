@@ -17,23 +17,33 @@ user_name = input("Welcome to the Te Reo Maori Quiz. Please enter your name:")
 print("Hello", user_name)
 print("This is a game to test your Te Reo Maori Vocabularly.")
 
-#using conditionals to determine what happens after they enter an input answering the start_game question
-start_game_answer = False
-while start_game_answer == False:
-  try:
-    start_game = input("Would you like to play? (y/n): ")
-    start_game = start_game[0]
-    start_game = start_game.lower()
+#ask for there input on wether or not they would like to play
+asking = False
+while asking == False:
+  start_game = input("Would you like to play (y/n)?: ")
+  print("You answered", start_game)
+  #making the code more robust so they can accept more answers 
+  start_game = start_game.lower()
+  start_game = start_game[0]
 
-    if start_game == "y":
-      print("Great! Let's get started.")
-      start_game_answer == True
-
-    elif start_game == "n":
-      print("See you later!")
-      quit()
+  if start_game == "y":
+    print("Great! Let's play...")
+    asking = True
   
-    else:
-      print("Input Error, please answer yes or no")
+  elif start_game == "n":
+    print("See you later!")
+    quit()
+   
+  else:
+    print("Invalid Input. Please enter yes or no")
     
-    except
+#explain how the game works
+print("Now i'll explain how the game works...")
+print("I will ask you to translate an enlish word to Te Reo Maori")
+print("And you will type in your answer!")
+print("You have 3 chances to answer right")
+print("We will tell you your score along the way, and at the end give you a % of the questions you got right!")
+
+#ask how many questions the player wants (5-10)
+
+no_questions = int(input("How many questions would you like (5-10): "))
