@@ -11,6 +11,7 @@ prompt = "What is Te Reo Maori for ..."
 score = 0
 chances = 3
 MIN = 5
+MAX = 10
 
 #ask for users name and introduce them to the game
 print("Hi there!")
@@ -59,6 +60,8 @@ while no_questions_ans == False:
       print("You answered", no_questions)
       no_questions_ans = True
       
+    else:
+      print("Invalid Imput. Please enter a number from 5 - 10")
   except ValueError:
     print("Invalid input. Plese enter a number. e.g 6")
       
