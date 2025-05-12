@@ -23,27 +23,27 @@ print("This is a game to test your Te Reo Maori Vocabulary.")
 
 #ask for their input on whether or not they would like to play
 asking = False
-while not asking:
-    try:
-        start_game = input("Would you like to play (y/n)?: ")
-        print("You answered", start_game)
-        #making the code more robust so it accepts more answers 
-        start_game = start_game.lower()
-        start_game = start_game[0]
+while asking == False:
+  try:
+    start_game = input("Would you like to play (y/n)?: ")
+    print("You answered", start_game)
+    #making the code more robust so it accepts more answers 
+    start_game = start_game.lower()
+    start_game = start_game[0]
         
-        if start_game == "y":
-            print("Great! Let's play...")
-            asking = True
+    if start_game == "y":
+      print("Great! Let's play...")
+      asking = True
         
-        elif start_game == "n":
-            print("See you later!")
-            exit()
+    elif start_game == "n":
+      print("See you later!")
+      exit()
         
-        else:
-            print("Invalid input. Please enter yes or no.")
+    else:
+      print("Invalid input. Please enter yes or no.")
     
-    except IndexError:
-        print("Invalid input. Please enter yes or no.")  
+  except IndexError:
+    print("Invalid input. Please enter yes or no.")  
 
 #explain how the game works
 print("Now I'll explain how the game works...")
@@ -54,16 +54,18 @@ print("We will tell you your score along the way, and at the end give you a % of
 
 #ask how many questions the player wants (5-10) + make it unbreakable using try/except
 no_questions_ans = False
-while not no_questions_ans:
-    try: 
-        no_questions = int(input("How many questions would you like (5-10): "))
-        if MIN <= no_questions <= MAX:
-            print("You answered", no_questions)
-            no_questions_ans = True
-        else:
-            print("Invalid Input. Please enter a number from 5 - 10")
-    except ValueError:
-        print("Invalid input. Please enter a number. e.g 6")
+while no_questions_ans == False:
+  try: 
+    no_questions = int(input("How many questions would you like (5-10): "))
+    if MIN <= no_questions <= MAX:
+      print("You answered", no_questions)
+      no_questions_ans = True
+        
+    else:
+      print("Invalid Input. Please enter a number from 5 - 10")
+    
+  except ValueError:
+    print("Invalid input. Please enter a number. e.g 6")
 
 # RANDOMIZE AND SELECT QUESTIONS + MATCHING ANSWERS
 #make the questions and answers strings match with each other
@@ -76,18 +78,29 @@ selected_questions, selected_answers = zip(*selected_pairs)
 
 # display selected questions and answers in a loop
 for i in range(no_questions):
+  #so it goes through the correct number of questions
   question = selected_questions[i]
   correct_answer = selected_answers[i]
   #so user_atempts and the chance variable can determin if they have anymore tries at the question
-  user_atempts = 0
+  user_attempts = 0
   got_it_right = False
   
   
   while user_attempts < chances:
-    user_answer = input(prompt, question"? ").strip()
+    user_answer = input("\n" + prompt + " " + question + "?").strip()
     
     if user_answer.lower() == correct_answer.lower():
       print("Ka pai! That is correct.")
       score += 1
       got_it_right = True
       break
+    
+    else:
+      user_attempts += 1
+      if user_attempts < chances:
+        print("Try again! You have " + str(chances - user_attempts) + "chances left")
+        
+      else:
+        print("Sorry, the correct answer was: " + correct_answer)
+    
+    
