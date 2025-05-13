@@ -14,6 +14,7 @@ score = 0
 chances = 3
 MIN = 5
 MAX = 10
+################
 
 #ask for users name and introduce them to the game
 print("Hi there!")
@@ -85,12 +86,16 @@ for i in range(no_questions):
   user_attempts = 0
   got_it_right = False
   
-  
+  #use a loop so that while your number of attemps is smaller than chances, you can answer the question
   while user_attempts < chances:
+    #add in variables and question
     user_answer = input("\n" + prompt + " " + question + "?").strip()
+    print("you answered " + user_answer)
     
+    #determine if the answer is correct (matching the answer variable) 
     if user_answer.lower() == correct_answer.lower():
       print("Ka pai! That is correct.")
+      # add one to there score
       score += 1
       got_it_right = True
       break
@@ -102,5 +107,10 @@ for i in range(no_questions):
         
       else:
         print("Sorry, the correct answer was: " + correct_answer)
-    
-    
+        
+print("\n---Quiz Complete---")
+print(user_name+ ", you got " + str(score) + " out of " +str(no_questions) + " correct.")
+percentage = (score / no_questions) * 100
+print("That's " + str(round(percentage, 1)) + " % correct!")
+         
+         
