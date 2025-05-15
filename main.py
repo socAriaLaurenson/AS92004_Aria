@@ -1,5 +1,5 @@
 """
-Te Reo Maori Quiz
+Te Reo Māori Quiz
 By Aria Laurenson
 11DGT
 """
@@ -7,9 +7,11 @@ By Aria Laurenson
 import random
 
 #set up variables
-questions = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]
-answers = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"]
-prompt = "What is Te Reo Maori for ..."
+questions = ["kia ora ", "haere rā ", "ae ", "Haratau ", "whero ", "kākāriki ", "Poutūterangi ", "Paengawhāwhā ", "mā ", "pango "]
+
+answers = ["hello", "goodbye", "yes", "may", "red", "green", "march", "april", "white", "black"]
+
+prompt = "What is the English translation of ..."
 score = 0
 chances = 3
 MIN = 5
@@ -82,7 +84,7 @@ for i in range(no_questions):
   #so it goes through the correct number of questions
   question = selected_questions[i]
   correct_answer = selected_answers[i]
-  #so user_atempts and the chance variable can determin if they have anymore tries at the question
+  #so user_attempts and the chance variable can determine if they have anymore tries at the question
   user_attempts = 0
   got_it_right = False
   
