@@ -20,9 +20,9 @@ MAX = 10
 
 #ask for users name and introduce them to the game
 print("Hi there!")
-user_name = input("Welcome to the Te Reo Maori Quiz. Please enter your name: ")
+user_name = input("Welcome to the Te Reo Māori Quiz. Please enter your name: ")
 print("Hello", user_name)
-print("This is a game to test your Te Reo Maori Vocabulary.")
+print("This is a game to test your Te Reo Māori Vocabulary.")
 
 #ask for their input on whether or not they would like to play
 asking = False
@@ -50,7 +50,7 @@ while asking == False:
 
 #explain how the game works
 print("Now I'll explain how the game works...")
-print("I will ask you to translate an English word to Te Reo Maori")
+print("I will ask you to translate an Te Reo Māori word to English")
 print("And you will type in your answer!")
 print("You have 3 chances to answer right")
 print("We will tell you your score along the way, and at the end give you a % of the questions you got right!")
