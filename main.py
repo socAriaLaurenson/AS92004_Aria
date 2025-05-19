@@ -1,7 +1,7 @@
 """
 Te Reo Māori Quiz
 By Aria Laurenson
-11DGT
+11DGT V8
 """
 
 import random
@@ -120,5 +120,7 @@ if percentage >= 50:
   
 else:
   print("You might need to work on this a bit...")
+
+print("see you later!")
          
          
