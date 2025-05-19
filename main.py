@@ -114,5 +114,11 @@ print("\n---Quiz Complete---")
 print(user_name+ ", you got " + str(score) + " out of " +str(no_questions) + " correct.")
 percentage = (score / no_questions) * 100
 print("That's " + str(round(percentage, 1)) + " % correct!")
+
+if percentage >= 50:
+  print("Great job, You passed!")
+  
+else:
+  print("You might need to work on this a bit...")
          
          
